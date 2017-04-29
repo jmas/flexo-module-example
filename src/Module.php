@@ -14,6 +14,7 @@ class Module extends \Flexo\Core\Module
         $this->app->get('/example', function($request, $response)
         {
             return $this->view->render($response, 'example/home.twig');
-        });
+        })->setName('example-home');
+        $this->container->nav->addItem('Example', 'example-home');
     }
 }
